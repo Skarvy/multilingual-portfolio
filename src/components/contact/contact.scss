@@ -1,0 +1,96 @@
+@import "../../app.scss";
+
+.contact {
+  height: 100%;
+  max-width: 1366px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    height: auto;
+    grid-template-columns: 1fr;
+    padding: 20px; // Ajustar el padding para dispositivos móviles
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Reducir el espacio entre elementos en dispositivos móviles
+
+    @include mobile {
+      gap: 10px; // Ajustar el espacio entre elementos en dispositivos móviles
+      text-align: center;
+      align-items: center;
+      
+      
+    }
+
+    h1 {
+      font-size: 72px; // Reducir el tamaño de la fuente en dispositivos móviles
+
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+
+    span {
+      font-weight: 600;
+      color: orange;
+    }
+  }
+
+  .formContainer {
+    position: relative;
+    height: auto;
+    margin-bottom: 50px;
+  
+    @include mobile {
+      padding: 10px;
+     
+    }
+  
+    .phoneSvg {
+      stroke: orange;
+      position: absolute;
+      margin: auto;
+      z-index: -1;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; // Espacio entre elementos en dispositivos de escritorio
+  
+      @include mobile {
+        gap: 10px; // Reducir el espacio entre elementos en dispositivos móviles
+        margin:0px;
+      }
+  
+      input,
+      textarea {
+        padding: 15px; // Padding en dispositivos de escritorio
+  
+        @include mobile {
+          padding: 10px; // Reducir el padding en dispositivos móviles
+        }
+      }
+  
+      button {
+        padding: 15px;
+        border: none;
+        background-color: orange;
+        cursor: pointer;
+        font-weight: 500;
+  
+        @include mobile {
+          padding: 15px; // Padding en dispositivos móviles
+          width: 100%; // Asegurar que el botón ocupe el ancho completo
+          visibility: visible; // Eliminar !important
+      }
+    }
+  }}
+}  
